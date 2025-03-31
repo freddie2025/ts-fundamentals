@@ -1,7 +1,23 @@
 import logo from "./logo.svg";
 import "./App.css";
+import { addTwoNumbers } from "./modules/addTwoNumbers";
+import { getFullName } from "./modules/getFullName";
+import {
+  MyFirstComponent,
+  myFirstComponentFunc,
+} from "./components/myfirstcomponent/MyFirstComponent";
 
 function App() {
+  console.log(addTwoNumbers(1, 2));
+  console.log(getFullName("Frederick", "James", "William"));
+
+  console.log(
+    MyFirstComponent({
+      message: "Hello World",
+    })
+  );
+  console.log(myFirstComponentFunc());
+
   return (
     <div className="App">
       <header className="App-header">

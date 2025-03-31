@@ -4,6 +4,8 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import axios from "axios";
+import { MyFirstComponent } from "./components/myfirstcomponent/MyFirstComponent";
+import Alert from "./components/alert/Alert";
 
 axios.defaults.baseURL = "http://localhost:4000";
 
@@ -12,6 +14,19 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
+    <MyFirstComponent message="Hello World" />
+    <div>
+      <Alert variant="success" dismissible={false}>
+        This is a success alert!
+      </Alert>
+      <Alert variant="danger" dismissible={true}>
+        This is a dismissible danger alert!
+      </Alert>
+      <Alert variant="warning" dismissible={false}>
+        This is a warning alert!
+      </Alert>
+    </div>
+
     <App />
   </React.StrictMode>
 );
