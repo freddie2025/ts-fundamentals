@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 // Define props interface
 interface AlertProps {
-  variant?:
+  $variant?:
     | "primary"
     | "secondary"
     | "success"
@@ -12,7 +12,7 @@ interface AlertProps {
     | "info"
     | "light"
     | "dark";
-  dismissible: boolean;
+  $dismissible: boolean;
   children: React.ReactNode;
 }
 
@@ -25,8 +25,8 @@ const StyledAlert = styled.div<AlertProps>`
   border-radius: 0.25rem;
 
   // Variant-based background and text colors
-  ${({ variant }) => {
-    switch (variant) {
+  ${({ $variant }) => {
+    switch ($variant) {
       case "primary":
         return "background-color: #cce5ff; border-color: #b8daff; color: #004085;";
       case "success":
@@ -48,7 +48,7 @@ const StyledAlert = styled.div<AlertProps>`
   }}
 
   // Only apply padding when dismissible is explicitly true
-  ${({ dismissible }) => dismissible === true && "padding-right: 4rem;"}
+  ${({ $dismissible }) => $dismissible === true && "padding-right: 4rem;"}
 `;
 
 // Dismiss button styling
@@ -71,19 +71,19 @@ const DismissButton = styled.button`
 `;
 
 // Alert component
-const Alert: React.FC<AlertProps> = ({
-  variant = "secondary",
-  dismissible = false,
+const Alert = ({
+  $variant = "secondary",
+  $dismissible,
   children,
-}) => {
+}: AlertProps) => {
   const [isVisible, setIsVisible] = useState(true);
 
   if (!isVisible) return null;
 
   return (
-    <StyledAlert variant={variant} dismissible={dismissible}>
+    <StyledAlert $variant={$variant} $dismissible={$dismissible}>
       {children}
-      {dismissible === true && (
+      {$dismissible === true && (
         <DismissButton onClick={() => setIsVisible(false)}>×</DismissButton>
       )}
     </StyledAlert>

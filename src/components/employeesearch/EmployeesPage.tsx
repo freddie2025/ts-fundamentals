@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import styled from "styled-components";
 import EmployeeSearch from "./EmployeeSearch";
@@ -12,16 +12,16 @@ const LoadingContainer = styled.div`
   height: 200px;
 `;
 
-const EmployeesPage: React.FC = () => {
+const EmployeesPage = () => {
   const [employees, setEmployees] = useState<Employee[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const fetchEmployees = async (term: string = "") => {
+  const fetchEmployees = async (term: string) => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "http://localhost:3000/employees-api/employees",
+        "http://localhost:4000/employees-api/employees",
         {
           params: { search: term },
         }

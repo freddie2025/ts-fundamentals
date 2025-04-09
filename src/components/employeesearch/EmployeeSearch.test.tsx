@@ -1,11 +1,10 @@
-import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import EmployeeSearch from "./EmployeeSearch";
 
 describe("EmployeeSearch Component", () => {
   it("renders correctly", () => {
-    const { asFragment } = render(<EmployeeSearch onSearch={() => {}} />);
-    expect(asFragment()).toMatchSnapshot();
+    const { container } = render(<EmployeeSearch onSearch={() => {}} />);
+    expect(container).toMatchSnapshot();
   });
 
   it("calls onSearch when the search button is clicked", () => {
@@ -28,7 +27,7 @@ describe("EmployeeSearch Component", () => {
     const input = screen.getByPlaceholderText("Search employees...");
 
     fireEvent.change(input, { target: { value: "Adams" } });
-    fireEvent.keyPress(input, { key: "Enter", code: "Enter", charCode: 13 });
+    fireEvent.keyDown(input, { key: "Enter", code: "Enter", charCode: 13 });
 
     expect(onSearch).toHaveBeenCalledWith("Adams");
   });
@@ -40,7 +39,7 @@ describe("EmployeeSearch Component", () => {
     const input = screen.getByPlaceholderText("Search employees...");
 
     fireEvent.change(input, { target: { value: "Adams" } });
-    fireEvent.keyPress(input, { key: "A", code: "KeyA" });
+    fireEvent.keyDown(input, { key: "A", code: "KeyA" });
 
     expect(onSearch).not.toHaveBeenCalled();
   });

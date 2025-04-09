@@ -1,4 +1,3 @@
-import React from "react";
 import { render } from "@testing-library/react";
 import EmployeesTable from "./EmployeesTable";
 import { Employee } from "./Employee";
@@ -6,7 +5,7 @@ import { Employee } from "./Employee";
 const mockEmployees: Employee[] = [
   {
     firstName: "Garner",
-    lastName: "Rosario",
+    surName: "Rosario",
     company: "ISODRIVE",
     email: "garnerrosario@isodrive.com",
     phone: "+1 (852) 576-3231",
@@ -15,7 +14,7 @@ const mockEmployees: Employee[] = [
   },
   {
     firstName: "Gibbs",
-    lastName: "Adams",
+    surName: "Adams",
     company: "VIASIA",
     email: "gibbsadams@viasia.com",
     phone: "+1 (968) 423-2117",
@@ -26,12 +25,12 @@ const mockEmployees: Employee[] = [
 
 describe("EmployeesTable Component", () => {
   it("renders correctly with employees", () => {
-    const { asFragment } = render(<EmployeesTable employees={mockEmployees} />);
-    expect(asFragment()).toMatchSnapshot();
+    const { container } = render(<EmployeesTable employees={mockEmployees} />);
+    expect(container).toMatchSnapshot();
   });
 
   it("renders correctly with no employees", () => {
-    const { asFragment } = render(<EmployeesTable employees={[]} />);
-    expect(asFragment()).toMatchSnapshot();
+    const { container } = render(<EmployeesTable employees={[]} />);
+    expect(container).toMatchSnapshot();
   });
 });

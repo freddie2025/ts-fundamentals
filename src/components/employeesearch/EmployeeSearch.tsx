@@ -23,11 +23,11 @@ const SearchButton = styled.button`
   cursor: pointer;
 `;
 
-interface EmployeeSearchProps {
+const EmployeeSearch = ({
+  onSearch,
+}: {
   onSearch: (searchTerm: string) => void;
-}
-
-const EmployeeSearch: React.FC<EmployeeSearchProps> = ({ onSearch }) => {
+}) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearch = () => {
@@ -46,7 +46,7 @@ const EmployeeSearch: React.FC<EmployeeSearchProps> = ({ onSearch }) => {
         type="text"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        onKeyPress={handleKeyPress}
+        onKeyDown={handleKeyPress}
         placeholder="Search employees..."
       />
       <SearchButton onClick={handleSearch}>Search</SearchButton>

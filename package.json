@@ -46,5 +46,18 @@
   },
   "devDependencies": {
     "axios-mock-adapter": "^2.1.0"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^axios$": "<rootDir>/node_modules/axios/dist/axios.js"
+    },
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/",
+      "/coverage/",
+      "/exercises/",
+      "index",
+      "App"
+    ]
   }
 }

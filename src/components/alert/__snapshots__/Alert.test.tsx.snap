@@ -1,0 +1,243 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert Component renders correctly with variant "danger" 1`] = `
+<div>
+  <div
+    class="sc-blHHSb jEqoXI"
+  >
+    This is a 
+    danger
+     alert
+  </div>
+</div>
+`;
+
+exports[`Alert Component renders correctly with variant "danger" and dismissible 1`] = `
+<div>
+  <div
+    class="sc-blHHSb gonPzb"
+  >
+    This is a dismissible 
+    danger
+     alert
+    <button
+      class="sc-gtLWhw fnRvqb"
+    >
+      ×
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Alert Component renders correctly with variant "dark" 1`] = `
+<div>
+  <div
+    class="sc-blHHSb eiWFfF"
+  >
+    This is a 
+    dark
+     alert
+  </div>
+</div>
+`;
+
+exports[`Alert Component renders correctly with variant "dark" and dismissible 1`] = `
+<div>
+  <div
+    class="sc-blHHSb kGuTC"
+  >
+    This is a dismissible 
+    dark
+     alert
+    <button
+      class="sc-gtLWhw fnRvqb"
+    >
+      ×
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Alert Component renders correctly with variant "info" 1`] = `
+<div>
+  <div
+    class="sc-blHHSb lmCtER"
+  >
+    This is a 
+    info
+     alert
+  </div>
+</div>
+`;
+
+exports[`Alert Component renders correctly with variant "info" and dismissible 1`] = `
+<div>
+  <div
+    class="sc-blHHSb bwJSKq"
+  >
+    This is a dismissible 
+    info
+     alert
+    <button
+      class="sc-gtLWhw fnRvqb"
+    >
+      ×
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Alert Component renders correctly with variant "light" 1`] = `
+<div>
+  <div
+    class="sc-blHHSb ueQKs"
+  >
+    This is a 
+    light
+     alert
+  </div>
+</div>
+`;
+
+exports[`Alert Component renders correctly with variant "light" and dismissible 1`] = `
+<div>
+  <div
+    class="sc-blHHSb cIQJer"
+  >
+    This is a dismissible 
+    light
+     alert
+    <button
+      class="sc-gtLWhw fnRvqb"
+    >
+      ×
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Alert Component renders correctly with variant "primary" 1`] = `
+<div>
+  <div
+    class="sc-blHHSb kbBMls"
+  >
+    This is a 
+    primary
+     alert
+  </div>
+</div>
+`;
+
+exports[`Alert Component renders correctly with variant "primary" and dismissible 1`] = `
+<div>
+  <div
+    class="sc-blHHSb kYeHqT"
+  >
+    This is a dismissible 
+    primary
+     alert
+    <button
+      class="sc-gtLWhw fnRvqb"
+    >
+      ×
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Alert Component renders correctly with variant "secondary" 1`] = `
+<div>
+  <div
+    class="sc-blHHSb hfRJQW"
+  >
+    This is a 
+    secondary
+     alert
+  </div>
+</div>
+`;
+
+exports[`Alert Component renders correctly with variant "secondary" and dismissible 1`] = `
+<div>
+  <div
+    class="sc-blHHSb fGOpTN"
+  >
+    This is a dismissible 
+    secondary
+     alert
+    <button
+      class="sc-gtLWhw fnRvqb"
+    >
+      ×
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Alert Component renders correctly with variant "success" 1`] = `
+<div>
+  <div
+    class="sc-blHHSb hZbtyU"
+  >
+    This is a 
+    success
+     alert
+  </div>
+</div>
+`;
+
+exports[`Alert Component renders correctly with variant "success" and dismissible 1`] = `
+<div>
+  <div
+    class="sc-blHHSb hKYZzP"
+  >
+    This is a dismissible 
+    success
+     alert
+    <button
+      class="sc-gtLWhw fnRvqb"
+    >
+      ×
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Alert Component renders correctly with variant "warning" 1`] = `
+<div>
+  <div
+    class="sc-blHHSb MmNSs"
+  >
+    This is a 
+    warning
+     alert
+  </div>
+</div>
+`;
+
+exports[`Alert Component renders correctly with variant "warning" and dismissible 1`] = `
+<div>
+  <div
+    class="sc-blHHSb ezytCb"
+  >
+    This is a dismissible 
+    warning
+     alert
+    <button
+      class="sc-gtLWhw fnRvqb"
+    >
+      ×
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Alert Component renders with default variant (secondary) when no variant is passed 1`] = `
+<div>
+  <div
+    class="sc-blHHSb hfRJQW"
+  >
+    This is a default alert
+  </div>
+</div>
+`;

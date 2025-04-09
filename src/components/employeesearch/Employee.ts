@@ -1,6 +1,6 @@
 export type Employee = {
   firstName: string;
-  lastName: string;
+  surName: string;
   company: string;
   email: string;
   phone: string;

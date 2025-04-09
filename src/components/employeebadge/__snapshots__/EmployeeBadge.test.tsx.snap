@@ -1,0 +1,144 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EmployeeBadge Component renders correctly with all fields 1`] = `
+<div>
+  <div
+    class="sc-blHHSb dfYFsp"
+  >
+    <div
+      class="sc-gtLWhw eRWbSV"
+    >
+      <img
+        alt="Tinky Middle Winky's profile"
+        class="sc-egkSDF eHyKCz"
+        src="tinky-winky.jpg"
+      />
+    </div>
+    <div
+      class="sc-fAUdSK dgAZUa"
+    >
+      <h2
+        class="sc-dntaoT jsWNwU"
+      >
+        Tinky Middle Winky
+      </h2>
+      <p
+        class="sc-ivxoEo cLSZIi"
+      >
+        Job Title: 
+        Teletubby
+      </p>
+      <p
+        class="sc-ghWlax CBYtd"
+      >
+        Email: 
+        tinky.winky@teletubbies.com
+      </p>
+      <p
+        class="sc-kLhKbu eiXNCH"
+      >
+        Cohort: 
+        12
+      </p>
+      <p
+        class="sc-ixGGxD nJzfl"
+      >
+        Team: 
+        Client Servicing and Engagement
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`EmployeeBadge Component renders correctly with example data 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-blHHSb dfYFsp"
+  >
+    <div
+      class="sc-gtLWhw eRWbSV"
+    >
+      <img
+        alt="Tinky Winky's profile"
+        class="sc-egkSDF eHyKCz"
+        src="tinky-winky.jpg"
+      />
+    </div>
+    <div
+      class="sc-fAUdSK dgAZUa"
+    >
+      <h2
+        class="sc-dntaoT jsWNwU"
+      >
+        Tinky Winky
+      </h2>
+      <p
+        class="sc-ivxoEo cLSZIi"
+      >
+        Job Title: Teletubby
+      </p>
+      <p
+        class="sc-ghWlax CBYtd"
+      >
+        Email: tiny.winky@teletubbies.com
+      </p>
+      <p
+        class="sc-kLhKbu eiXNCH"
+      >
+        Cohort: 12
+      </p>
+      <p
+        class="sc-ixGGxD nJzfl"
+      >
+        Team: Client Servicing and Engagement
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`EmployeeBadge Component renders correctly without optional fields 1`] = `
+<div>
+  <div
+    class="sc-blHHSb dfYFsp"
+  >
+    <div
+      class="sc-gtLWhw eRWbSV"
+    >
+      <img
+        alt="Dipsy Green's profile"
+        class="sc-egkSDF eHyKCz"
+        src="dipsy.jpg"
+      />
+    </div>
+    <div
+      class="sc-fAUdSK dgAZUa"
+    >
+      <h2
+        class="sc-dntaoT jsWNwU"
+      >
+        Dipsy Green
+      </h2>
+      <p
+        class="sc-ivxoEo cLSZIi"
+      >
+        Job Title: 
+        Teletubby
+      </p>
+      <p
+        class="sc-ghWlax CBYtd"
+      >
+        Email: 
+        dipsy@teletubbies.com
+      </p>
+      <p
+        class="sc-ixGGxD nJzfl"
+      >
+        Team: 
+        Client Servicing and Engagement
+      </p>
+    </div>
+  </div>
+</div>
+`;

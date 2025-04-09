@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Table,
   TableBody,
@@ -10,11 +9,7 @@ import {
 } from "@mui/material";
 import { Employee } from "./Employee";
 
-interface EmployeesTableProps {
-  employees: Employee[];
-}
-
-const EmployeesTable: React.FC<EmployeesTableProps> = ({ employees }) => {
+const EmployeesTable = ({ employees }: { employees: Employee[] }) => {
   return (
     <TableContainer component={Paper}>
       <Table>
@@ -33,7 +28,7 @@ const EmployeesTable: React.FC<EmployeesTableProps> = ({ employees }) => {
           {employees.map((employee, index) => (
             <TableRow key={index}>
               <TableCell>{employee.firstName}</TableCell>
-              <TableCell>{employee.lastName}</TableCell>
+              <TableCell>{employee.surName}</TableCell>
               <TableCell>{employee.company}</TableCell>
               <TableCell>{employee.email}</TableCell>
               <TableCell>{employee.phone}</TableCell>

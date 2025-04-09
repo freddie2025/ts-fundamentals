@@ -1,4 +1,3 @@
-import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
@@ -10,7 +9,7 @@ const mock = new MockAdapter(axios);
 const mockEmployees: Employee[] = [
   {
     firstName: "Garner",
-    lastName: "Rosario",
+    surName: "Rosario",
     company: "ISODRIVE",
     email: "garnerrosario@isodrive.com",
     phone: "+1 (852) 576-3231",
@@ -19,7 +18,7 @@ const mockEmployees: Employee[] = [
   },
   {
     firstName: "Gibbs",
-    lastName: "Adams",
+    surName: "Adams",
     company: "VIASIA",
     email: "gibbsadams@viasia.com",
     phone: "+1 (968) 423-2117",
@@ -28,15 +27,15 @@ const mockEmployees: Employee[] = [
   },
 ];
 
+const EMPLOYEES_API_URL = "http://localhost:4000/employees-api/employees";
+
 describe("EmployeesPage Component", () => {
   beforeEach(() => {
     mock.reset();
   });
 
   it("fetches and displays employees on initial load", async () => {
-    mock
-      .onGet("http://localhost:3000/employees-api/employees")
-      .reply(200, mockEmployees);
+    mock.onGet(EMPLOYEES_API_URL).reply(200, mockEmployees);
 
     render(<EmployeesPage />);
 
@@ -46,6 +45,8 @@ describe("EmployeesPage Component", () => {
     // Wait for API call to resolve
     await waitFor(() => {
       expect(screen.getByText("Garner")).toBeInTheDocument();
+    });
+    await waitFor(() => {
       expect(screen.getByText("Gibbs")).toBeInTheDocument();
     });
 
@@ -55,13 +56,13 @@ describe("EmployeesPage Component", () => {
   it("displays employees based on search term", async () => {
     // Initial load
     mock
-      .onGet("http://localhost:3000/employees-api/employees", {
+      .onGet(EMPLOYEES_API_URL, {
         params: { search: "" },
       })
       .reply(200, mockEmployees);
     // Search load
     mock
-      .onGet("http://localhost:3000/employees-api/employees", {
+      .onGet(EMPLOYEES_API_URL, {
         params: { search: "Adams" },
       })
       .reply(200, [mockEmployees[1]]);
@@ -71,6 +72,8 @@ describe("EmployeesPage Component", () => {
     // Wait for initial load
     await waitFor(() => {
       expect(screen.getByText("Garner")).toBeInTheDocument();
+    });
+    await waitFor(() => {
       expect(screen.getByText("Gibbs")).toBeInTheDocument();
     });
 
@@ -82,12 +85,14 @@ describe("EmployeesPage Component", () => {
     // Wait for search results
     await waitFor(() => {
       expect(screen.queryByText("Garner")).not.toBeInTheDocument();
+    });
+    await waitFor(() => {
       expect(screen.getByText("Gibbs")).toBeInTheDocument();
     });
   });
 
   it("handles API error gracefully", async () => {
-    mock.onGet("http://localhost:3000/employees-api/employees").reply(500);
+    mock.onGet(EMPLOYEES_API_URL).reply(500);
 
     render(<EmployeesPage />);
 
@@ -97,12 +102,14 @@ describe("EmployeesPage Component", () => {
     // Wait for API call to fail
     await waitFor(() => {
       expect(screen.queryByText("Garner")).not.toBeInTheDocument();
+    });
+    await waitFor(() => {
       expect(screen.queryByAltText("Loading...")).not.toBeInTheDocument();
     });
   });
 
   it("shows loading spinner during long API call", async () => {
-    mock.onGet("http://localhost:3000/employees-api/employees").reply(() => {
+    mock.onGet(EMPLOYEES_API_URL).reply(() => {
       return new Promise((resolve) => {
         setTimeout(() => resolve([200, mockEmployees]), 2000);
       });

@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { Employee } from "./Employee";
 
@@ -55,12 +54,11 @@ const Team = styled.p`
   margin: 0;
 `;
 
-// EmployeeBadge component
-const EmployeeBadge: React.FC<{ employee: Employee }> = ({ employee }) => {
+const EmployeeBadge = ({ employee }: { employee: Employee }) => {
   const { details, imagePath, jobTitle, email, cohort, team } = employee;
-  const fullName = `${details.firstName} ${
-    details.middleName ? details.middleName + " " : ""
-  }${details.lastName}`;
+  const fullName = [details?.firstName, details?.middleName, details?.lastName]
+    .filter(Boolean)
+    .join(" ");
 
   return (
     <BadgeContainer>
@@ -71,7 +69,7 @@ const EmployeeBadge: React.FC<{ employee: Employee }> = ({ employee }) => {
         <Name>{fullName}</Name>
         <JobTitle>Job Title: {jobTitle}</JobTitle>
         <Email>Email: {email}</Email>
-        {cohort && <Cohort>Cohort: {cohort === 12 ? "12" : "13"}</Cohort>}
+        {cohort && <Cohort>Cohort: {cohort}</Cohort>}
         <Team>Team: {team}</Team>
       </TextContainer>
     </BadgeContainer>

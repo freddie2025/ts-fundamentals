@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EmployeeSearch Component renders correctly 1`] = `
+<div>
+  <div
+    class="sc-blHHSb iJHDpU"
+  >
+    <input
+      class="sc-gtLWhw dVKrzN"
+      placeholder="Search employees..."
+      type="text"
+      value=""
+    />
+    <button
+      class="sc-egkSDF fYgMAy"
+    >
+      Search
+    </button>
+  </div>
+</div>
+`;
